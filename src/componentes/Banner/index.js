@@ -1,7 +1,7 @@
-import './Banner.css'
+import './index.css'
 
 
-function Banner (){
+export default function Banner (){
     return (
         <header className='banner'> 
             <img src="/assets/banner.png" alt="Banner Principal da página do Organo"/>
@@ -9,5 +9,3 @@ function Banner (){
     );
 
 }
-
-export default Banner

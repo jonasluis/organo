@@ -1,6 +1,6 @@
-import './CampoTexto.css'
+import './index.css'
 
-const CampoTexto = (props) => {
+export default function CampoTexto(props) {
 
     return ( 
         <div className="campo-texto">
@@ -10,4 +10,3 @@ const CampoTexto = (props) => {
     )
 }
 
-export default CampoTexto
