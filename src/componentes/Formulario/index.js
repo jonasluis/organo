@@ -4,11 +4,12 @@ import CampoTexto from "../CampoTexto/index.js";
 import ListaSuspensa from "../ListaSuspensa/index.js";
 import "./index.css";
 
-export default function Formulario() {
+export default function Formulario(props) {
 
   const times = [
     'Back-end',
      'Front-end',
+     'Full-Stack',
      'Data Science',
       'Devops',
       'UX e Design',
@@ -24,7 +25,12 @@ export default function Formulario() {
 
    const aoSalvar = (evento) => {
     evento.preventDefault()
-    console.log('Form foi submetido', nome, cargo, imagem, time)
+    props.aoColaboradorCadastrado({
+      nome,
+      cargo,
+      imagem,
+      time
+    })
    }
 
   return (
