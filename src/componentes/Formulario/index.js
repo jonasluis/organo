@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Botao from "../Botao/index.js";
 import CampoTexto from "../CampoTexto/index.js";
 import ListaSuspensa from "../ListaSuspensa/index.js";
@@ -13,22 +14,50 @@ export default function Formulario() {
       'UX e Design',
       'Mobile',
       "Inovação e Gestão"
-
    ]
 
+   const [nome, setNome] = useState('')
+   const [cargo, setCargo] = useState('')
+   const [imagem, setImagem] = useState('')
+   const [time, setTime] = useState('')
+    
+
    const aoSalvar = (evento) => {
-    evento.preventDefalt()
-    console.log('Form foi submetido')
+    evento.preventDefault()
+    console.log('Form foi submetido', nome, cargo, imagem, time)
    }
 
   return (
     <section className="formulario">
       <form onSubmit={aoSalvar}>
         <h2>Preencha os dados para criar o card do Funcionario.</h2>
-        <CampoTexto obrigatorio={true} label="Nome" placeholder="Digite seu nome" />
-        <CampoTexto obrigatorio={true} label="Cargo" placeholder="Digite seu cargo" />
-        <CampoTexto label="Imagem" placeholder="Informe o endereço da imagem" />
-        <ListaSuspensa obrigatorio={true} label="Times" itens={times}/>
+        <CampoTexto
+          obrigatorio={true} 
+          label="Nome" 
+          placeholder="Digite seu nome"
+          valor={nome}
+          aoAlterado={valor => setNome(valor)}
+         />
+        <CampoTexto 
+          obrigatorio={true} 
+          label="Cargo" 
+          placeholder="Digite seu cargo"
+          valor={cargo}
+          aoAlterado={valor => setCargo(valor)}
+          />
+        <CampoTexto 
+          label="Imagem"
+          placeholder="Informe o endereço da imagem"
+          valor={imagem}
+          aoAlterado={valor => setImagem(valor)}
+          />
+        <ListaSuspensa 
+          obrigatorio={true} 
+          label="Times" 
+          itens={times}
+          valor={time}
+          aoAlterado={valor => setTime(valor)}
+          />
         <Botao>
           Criar Card
         </Botao>  
