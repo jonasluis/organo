@@ -1,3 +1,4 @@
+import Colaborador from '../Colaborador'
 import './index.css'
 
 export default function Time(props){
@@ -7,6 +8,9 @@ export default function Time(props){
 
         <section className='time' style={css}>
             <h3 style={{borderColor: props.corPrimaria}}>{props.nome}</h3>
+            <div className='colaboradores'>
+                {props.colaboradores.map( colaborador => <Colaborador nome={colaborador.nome} cargo={colaborador.cargo} imagem={colaborador.imagem} />)}
+            </div>
         </section>
     )
 
