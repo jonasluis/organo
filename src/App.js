@@ -39,7 +39,7 @@ function App() {
     {
       nome: 'Mobile',
       corPrimaria: '#FF8A29',
-      corSecundaria: '#FFEEDFh'
+      corSecundaria: '#FFEEDF'
     },
     {
       nome: 'Inovação e Gestão',
