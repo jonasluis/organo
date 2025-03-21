@@ -265,6 +265,15 @@ function App() {
     setTimes([...times, {...novoTime, id: uuidv4()}])
   }
 
+  function resolverFavorito(id) {
+    setColaboradores(colaboradores.map(colaborador => {
+      if(colaborador.id === id){
+        colaborador.favorito = !colaborador.favorito
+      }
+      return colaborador
+    }))
+  }
+
   return (
     <div className="App">
       <Banner/>
@@ -277,6 +286,7 @@ function App() {
           <h1>Minha organização</h1>
       {times.map(time => 
         <Time 
+          aoFavoritar={resolverFavorito}
           mudarCor={mudarCorDoTime}
           key={time.nome} 
           time={time}
