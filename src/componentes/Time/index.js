@@ -9,7 +9,7 @@ export default function Time({ time, colaboradores, aoDeletar, mudarCor }) {
         colaboradores.length > 0 ? (
             <section className='time' style={css}>
                 <input 
-                    onChange={evento => mudarCor(evento.target.value, time.nome)} 
+                    onChange={evento => mudarCor(evento.target.value, time.id)} 
                     value={time.cor} 
                     type='color' 
                     className='input-cor'
