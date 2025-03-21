@@ -16,13 +16,11 @@ export default function Time({ time, colaboradores, aoDeletar, mudarCor }) {
                 />
                 <h3 style={{ borderColor: time.cor }}>{time.nome}</h3>
                 <div className='colaboradores'>
-                    {colaboradores.map(colaborador => (
+                    {colaboradores.map((colaborador, indice) => (
                         <Colaborador 
                             corDeFundo={time.cor} 
-                            key={colaborador.nome} 
-                            nome={colaborador.nome} 
-                            cargo={colaborador.cargo} 
-                            imagem={colaborador.imagem} 
+                            key={indice} 
+                            colaborador={colaborador} 
                             aoDeletar={aoDeletar} 
                         />
                     ))}
