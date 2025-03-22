@@ -33,4 +33,5 @@ h1, h2 {
 .org img {  
   position: absolute;
   right: 180px; 
+  cursor: pointer;
 }

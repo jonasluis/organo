@@ -319,7 +319,7 @@ function App() {
           }
         />
       ) : (
-        <div className="org"></div>
+        ''
       )}
       <section className="times">
         <div className="org">
