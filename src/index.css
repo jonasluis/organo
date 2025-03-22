@@ -22,3 +22,15 @@ h1 {
 h1, h2 {
   font-family: 'Prata', serif;
 }
+
+.org {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.org img {  
+  position: absolute;
+  right: 180px; 
+}
