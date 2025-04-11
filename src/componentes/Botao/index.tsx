@@ -1,6 +1,5 @@
 import { ReactElement } from 'react'
 import './index.css'
-import React from 'react'
 
     interface BotaoProps {
         children: ReactElement
