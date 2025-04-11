@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import Banner from "./componentes/Banner/index.js";
+import Banner from "./componentes/Banner/index.tsx";
 import Formulario from "./componentes/Formulario/index.js";
 import Time from "./componentes/Time/index.js";
 import Rodape from "./componentes/Rodape/index.js";
@@ -308,7 +308,10 @@ function App() {
 
   return (
     <div className="App">
-      <Banner />
+      <Banner 
+      enderecoImagem="/assets/banner.png"
+      textoAlternativo="Banner Principal da página do Organo"
+      />
 
       {formVisivel ? (
         <Formulario
