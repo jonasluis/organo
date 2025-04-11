@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Botao from "../Botao/index.js";
+import Botao from "../Botao/index.tsx";
 import Campo from "../Campo/index.js";
 import ListaSuspensa from "../ListaSuspensa/index.js";
 import "./index.css";
