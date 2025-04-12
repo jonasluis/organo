@@ -25,6 +25,7 @@ export default function Formulario({aoColaboradorCadastrado, times, aoCriarTime}
    const [time, setTime] = useState('')
    const [nomeTime, setNomeTime] = useState('')
    const [corTime, setCorTime] = useState('')
+   const [data, setData] = useState('')
     
 
    const aoSalvar = (evento: React.FormEvent<HTMLFormElement>) => {
@@ -35,6 +36,7 @@ export default function Formulario({aoColaboradorCadastrado, times, aoCriarTime}
       cargo,
       imagem,
       time,
+      data,
       favorito: false
   })
   setNome('')
@@ -66,6 +68,13 @@ export default function Formulario({aoColaboradorCadastrado, times, aoCriarTime}
           placeholder="Informe o endereço da imagem"
           valor={imagem}
           aoAlterado={valor => setImagem(valor)}
+          />
+        <Campo 
+          type='date'
+          label="Data de Entrada no time"
+          placeholder=""
+          valor={data}
+          aoAlterado={valor => setData(valor)}
           />
         <ListaSuspensa 
           obrigatorio={true} 

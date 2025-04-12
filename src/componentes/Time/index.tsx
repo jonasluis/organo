@@ -36,6 +36,7 @@ export default function Time({ time, colaboradores, aoDeletar, mudarCor, aoFavor
                                 colaborador={colaborador} 
                                 aoDeletar={aoDeletar} 
                                 aoFavoritar={aoFavoritar}
+                                data={colaborador.data}
                             />
                         )
                     })}

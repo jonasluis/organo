@@ -8,6 +8,7 @@ interface ColaboradorProps {
     corDeFundo: string;
     aoDeletar: (id: string) => void;
     aoFavoritar: (id: string) => void;
+    data: string
 }
 
 const CloseIcon = AiFillCloseCircle as React.FC<IconBaseProps>;
