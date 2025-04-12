@@ -2,7 +2,7 @@ import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Banner from "./componentes/Banner/index.tsx";
 import Formulario from "./componentes/Formulario/index.js";
-import Time from "./componentes/Time/index.js";
+import Time from "./componentes/Time/index.tsx";
 import Rodape from "./componentes/Rodape/index.js";
 
 function App() {
