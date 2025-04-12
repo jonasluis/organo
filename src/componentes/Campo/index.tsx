@@ -21,7 +21,7 @@ export default function Campo({type = 'text', aoAlterado, label, valor, obrigato
             <label>{label}</label>
             <input value={valor} 
                 type={type}
-                onChange={evento => aoDigitado} 
+                onChange={aoDigitado} 
                 required={obrigatorio} 
                 placeholder={`${placeholder}...`}
             />
