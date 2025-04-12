@@ -42,6 +42,7 @@ export default function Colaborador( {colaborador, corDeFundo, aoDeletar, aoFavo
             <div className='rodape'>
                 <h4>{colaborador.nome}</h4>
                 <h5>{colaborador.cargo}</h5>
+                <h5>{new Date(colaborador.data).toLocaleDateString('pt-BR', { timeZone: 'UTC' })}</h5>
                 <div className="favoritar">
                     {colaborador.favorito 
                         ? <HeartFilled {...propsFavorito} color="ff0000"/> 
