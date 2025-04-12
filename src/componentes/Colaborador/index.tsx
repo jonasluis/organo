@@ -1,6 +1,7 @@
 import { AiFillCloseCircle, AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import './index.css'
 import { IColaborador } from "../../compartilhado/interfaces/IColaborador";
+import type { IconBaseProps } from "react-icons";
 
 interface ColaboradorProps {
     colaborador: IColaborador;
@@ -8,6 +9,11 @@ interface ColaboradorProps {
     aoDeletar: (id: string) => void;
     aoFavoritar: (id: string) => void;
 }
+
+const CloseIcon = AiFillCloseCircle as React.FC<IconBaseProps>;
+const HeartFilled = AiFillHeart as React.FC<IconBaseProps>;
+const HeartOutline = AiOutlineHeart as React.FC<IconBaseProps>;
+
 
 export default function Colaborador( {colaborador, corDeFundo, aoDeletar, aoFavoritar}: ColaboradorProps){
 
@@ -24,7 +30,7 @@ export default function Colaborador( {colaborador, corDeFundo, aoDeletar, aoFavo
 
     return (
         <div className='colaborador' >
-            <AiFillCloseCircle 
+            <CloseIcon 
                 size={25} 
                 className='deletar' 
                 onClick={() => aoDeletar(colaborador.id) }
@@ -37,8 +43,8 @@ export default function Colaborador( {colaborador, corDeFundo, aoDeletar, aoFavo
                 <h5>{colaborador.cargo}</h5>
                 <div className="favoritar">
                     {colaborador.favorito 
-                        ? <AiFillHeart {...propsFavorito} color="ff0000"/> 
-                        : <AiOutlineHeart {...propsFavorito}/>
+                        ? <HeartFilled {...propsFavorito} color="ff0000"/> 
+                        : <HeartOutline {...propsFavorito}/>
                     }
                 </div>
             </div>
