@@ -41,6 +41,6 @@ export default function Time({ time, colaboradores, aoDeletar, mudarCor, aoFavor
                     })}
                 </div>
             </section>
-        ) : null
+        ) : <></>
     );
 }

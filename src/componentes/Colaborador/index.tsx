@@ -12,8 +12,11 @@ interface ColaboradorProps {
 export default function Colaborador( {colaborador, corDeFundo, aoDeletar, aoFavoritar}: ColaboradorProps){
 
     function favoritar() {
-        aoFavoritar(colaborador.id)
-    }
+        if (colaborador.id) {
+          aoFavoritar(colaborador.id)
+        }
+      }
+
     const propsFavorito = {
         size: 25,
         onClick: favoritar
@@ -24,7 +27,7 @@ export default function Colaborador( {colaborador, corDeFundo, aoDeletar, aoFavo
             <AiFillCloseCircle 
                 size={25} 
                 className='deletar' 
-                onClick={() => aoDeletar(colaborador.id)}
+                onClick={() => aoDeletar(colaborador.id) }
             />
             <div className='cabecalho' style={{backgroundColor: corDeFundo}}>
                 <img src={colaborador.imagem} alt={colaborador.nome}/>

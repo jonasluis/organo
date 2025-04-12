@@ -1,10 +1,22 @@
+import { v4 as uuidv4 } from 'uuid';
 import { useState } from 'react'
-import Botao from "../Botao/index.tsx";
-import Campo from "../Campo/index.tsx";
-import ListaSuspensa from "../ListaSuspensa/index.tsx";
+import Botao from "../Botao";
+import Campo from "../Campo";
+import ListaSuspensa from "../ListaSuspensa";
 import "./index.css";
+import { IColaborador } from '../../compartilhado/interfaces/IColaborador';
+import { ITime } from '../../compartilhado/interfaces/ITime';
 
-export default function Formulario({aoColaboradorCadastrado, times, aoCriarTime}) {
+
+interface FormularioProps {
+  aoColaboradorCadastrado: (colaborador: IColaborador) => void
+  times: string[];
+  aoCriarTime: (time: ITime) => void;
+} 
+
+
+
+export default function Formulario({aoColaboradorCadastrado, times, aoCriarTime}: FormularioProps) {
 
 
    const [nome, setNome] = useState('')
@@ -15,23 +27,25 @@ export default function Formulario({aoColaboradorCadastrado, times, aoCriarTime}
    const [corTime, setCorTime] = useState('')
     
 
-   const aoSalvar = (evento) => {
+   const aoSalvar = (evento: React.FormEvent<HTMLFormElement>) => {
     evento.preventDefault()
     aoColaboradorCadastrado({
+      id: uuidv4(),
       nome,
       cargo,
       imagem,
-      time
-    })
-    setNome('')
-    setCargo('')
-    setImagem('')
-    setTime('')
-   }
+      time,
+      favorito: false
+  })
+  setNome('')
+  setCargo('')
+  setImagem('')
+  setTime('')
+}
 
   return (
     <section className="formulario">
-      <form onSubmit={aoSalvar}>
+      <form onSubmit={evento => aoSalvar(evento)}>
         <h2>Preencha os dados para criar o card do Funcionario.</h2>
         <Campo
           obrigatorio={true} 
@@ -66,7 +80,7 @@ export default function Formulario({aoColaboradorCadastrado, times, aoCriarTime}
       </form>
       <form onSubmit={(evento) => {
         evento.preventDefault()
-        aoCriarTime({nome: nomeTime, cor: corTime})
+        aoCriarTime({id: uuidv4(), nome: nomeTime, cor: corTime})
       }}>
         <h2>Preencha os dados para criar um novo time.</h2>
         <Campo

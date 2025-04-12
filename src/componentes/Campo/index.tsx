@@ -5,7 +5,7 @@ interface CampoProps {
     placeholder: string
     label: string
     valor: string
-    obrigatorio: boolean
+    obrigatorio?: boolean
     type?: string
 }
 
